@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020-2024 Marvin Wichmann, Michael Clarke
+ * Copyright (C) 2020-2022 Marvin Wichmann, Michael Clarke
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,7 +19,6 @@
 package com.github.mc1arke.sonarqube.plugin.almclient.bitbucket;
 
 import com.github.mc1arke.sonarqube.plugin.almclient.bitbucket.model.AnnotationUploadLimit;
-import com.github.mc1arke.sonarqube.plugin.almclient.bitbucket.model.BuildStatus;
 import com.github.mc1arke.sonarqube.plugin.almclient.bitbucket.model.CodeInsightsAnnotation;
 import com.github.mc1arke.sonarqube.plugin.almclient.bitbucket.model.CodeInsightsReport;
 import com.github.mc1arke.sonarqube.plugin.almclient.bitbucket.model.DataValue;
@@ -109,11 +108,4 @@ public interface BitbucketClient {
      */
     Repository retrieveRepository() throws IOException;
 
-    /**
-     * Submit the build status for the given commit.
-     * @param commitSha the Git commit hash
-     * @param buildStatus the build status containing the state, URL, and identifiers
-     * @throws IOException on any issue submitting the build status
-     */
-    void submitBuildStatus(String commitSha, BuildStatus buildStatus) throws IOException;
 }
